@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+	"name": "TGM Elearning Presence",
+	"version": "1.0.2",
+
+	"description": "Uses https://github.com/lolamtisch/Discord-RPC-Extension to display a presence for https://elearning.tgm.ac.at/ in discord",
+
+	"permissions": [
+		"https://elearning.tgm.ac.at/*",
+		"storage"
+	],
+
+	"options_ui": {
+		"page": "options.html",
+		"browser_style": true
+	},
+
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["https://elearning.tgm.ac.at/*"],
+			"js": ["main.js"]
+		}
+	],
+	
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{c8f61b5d-a6ea-4a6d-ac9d-a92ceae7e7a6}"
+		}
+	}
+}
